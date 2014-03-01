@@ -217,7 +217,13 @@ get '/team/:team' do
     away_score: 21
   }
 ]
+@game_array = []
 
+@team_data.each do |find|
+  if find[:home_team] || find[:away_team] == params[:team]
+    @game_array << find
+  end
+end
 
 @team_array = []
 

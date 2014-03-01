@@ -18,8 +18,15 @@
 
   </ul>
    <ul><% @single_team_array.each do |name| %>
-  <li><%= "#{name}" %></li>
+  <li> <%= "Wins: #{name[:Wins]} Losses: #{name[:Losses]}" %> </li>
   <% end %>
+  </ul>
+  <ul>
+    <% @game_array.each do |games| %>
+    <li> <%= "Home: #{games[:home_team]} VS. Away: #{games[:away_team]} SCORE: #{games[:home_score]} - #{games[:away_score]}"%> </li>
+      <% end %>
+
+
   </ul>
 </body>
 </html>
