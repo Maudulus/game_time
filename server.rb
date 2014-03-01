@@ -84,10 +84,10 @@ require 'shotgun'
 
 
 
- get '/leaderboard' do
-@team_array = []
+get '/leaderboard' do
+  @team_array = []
 
-@team_data = [
+  @team_data = [
     {
       home_team: "Patriots",
       away_team: "Broncos",
@@ -136,23 +136,23 @@ end
   end
 end
 
-  @win_counts = []
-  @team_array.each do |counter|
-    @win_counts << {counter => @win_array.count(counter)}
-    @win_counts = @win_counts.uniq
-  end
-  @win_counts = Hash[*@win_counts.collect{|hash| hash.to_a}.flatten]
-  @win_counts =  Hash[@win_counts.sort_by{|k,v| -v}]
+@win_counts = []
+@team_array.each do |counter|
+  @win_counts << {counter => @win_array.count(counter)}
+  @win_counts = @win_counts.uniq
+end
+@win_counts = Hash[*@win_counts.collect{|hash| hash.to_a}.flatten]
+@win_counts =  Hash[@win_counts.sort_by{|k,v| -v}]
 
 
-  @loss_array = []
-  @team_data.each do |losses|
-    if losses[:home_score] < losses[:away_score]
-      @loss_array << losses[:home_team]
-    elsif losses[:away_score] < losses[:home_score]
-      @loss_array << losses[:away_team]
-    end
+@loss_array = []
+@team_data.each do |losses|
+  if losses[:home_score] < losses[:away_score]
+    @loss_array << losses[:home_team]
+  elsif losses[:away_score] < losses[:home_score]
+    @loss_array << losses[:away_team]
   end
+end
 
 @loss_counts = []
 @team_array.each do |counter|
@@ -180,14 +180,14 @@ end
  #puts @final_array
 # puts @win_counts
 #puts @ranking
- @page_title = "LEADERBOARD"
- erb :leaderboard
+@page_title = "LEADERBOARD"
+erb :leaderboard
 end
 
-# get '/team/:team' do
+get '/team/:team' do
 
 
-#  @page_title = params[:home_team]
-#  erb :teampages
-# end
+  @page_title = params[:home_team]
+  erb :teampages
+end
 
