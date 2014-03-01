@@ -17,9 +17,9 @@
     <li><a href="http://localhost:9393/team/Colts">Colts</a></li>
 
   </ul>
-
-  <%= "#{@single_team_array}" %>
+   <ul><% @single_team_array.each do |name| %>
+  <li><%= "#{name}" %></li>
   <% end %>
-
+  </ul>
 </body>
 </html>
