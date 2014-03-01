@@ -186,8 +186,15 @@ end
 
 get '/team/:team' do
 
+@single_team_array = []
 
-  @page_title = params[:home_team]
+# for @final_array.each do |find|
+#   if find[:Team] == params[:team]
+#     @single_team_array << find
+#   end
+# end
+
+  @page_title = params[:team]
   erb :teampages
 end
 

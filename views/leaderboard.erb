@@ -23,7 +23,13 @@
   <ol>
     <% @final_array.each do |name| %>
 
-    <li><%= "#{name} " %> </li>
+    <li><%= "Team: #{name[:Team]}" %>
+          <ul>
+            <li><%="Wins: #{name[:Wins]}" %></li>
+            <li><%="Losses: #{name[:Losses]}"%></li>
+            <li><%="Overall Points: #{name[:Overall_Score_Ranking]}"%></li>
+          </ul>
+                 </li>
     <% end %>
 
 
