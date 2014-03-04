@@ -22,18 +22,16 @@
   <h3>RANKING</h3>
   <ol>
     <% @final_array.each do |name| %>
-
-    <li><%= "Team: #{name[:Team]}" %>
-          <ul>
-            <li><%="Wins: #{name[:Wins]}" %></li>
-            <li><%="Losses: #{name[:Losses]}"%></li>
-            <li><%="Overall Points: #{name[:Overall_Score_Ranking]}"%></li>
-          </ul>
-                 </li>
+      <li>
+        <%= "Team: #{name[:Team]}" %>
+        <ul>
+          <li><%="Wins: #{name[:Wins]}" %></li>
+          <li><%="Losses: #{name[:Losses]}"%></li>
+          <li><%="Overall Points: #{name[:Overall_Score_Ranking]}"%></li>
+        </ul>
+     </li>
     <% end %>
-
-
-  </0l>
+  </ol>
 
 
 </body>

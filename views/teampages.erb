@@ -17,14 +17,15 @@
     <li><a href="http://localhost:9393/team/Colts">Colts</a></li>
 
   </ul>
-   <ul><% @single_team_array.each do |name| %>
-  <li> <%= "Wins: #{name[:Wins]} Losses: #{name[:Losses]}" %> </li>
-  <% end %>
+  <ul>
+    <% @single_team_array.each do |name| %>
+    <li> <%= "Wins: #{name[:Wins]} Losses: #{name[:Losses]}" %> </li>
+    <% end %>
   </ul>
   <ul>
     <% @game_array.each do |games| %>
-    <li> <%= "Home: #{games[:home_team]} VS. Away: #{games[:away_team]} SCORE: #{games[:home_score]} - #{games[:away_score]}"%> </li>
-      <% end %>
+      <li> <%= "Home: #{games[:home_team]} VS. Away: #{games[:away_team]} SCORE: #{games[:home_score]} - #{games[:away_score]}"%> </li>
+    <% end %>
 
 
   </ul>
